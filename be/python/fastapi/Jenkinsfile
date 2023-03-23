@@ -19,7 +19,7 @@ pipeline{
                 dir("${PROJECT_PATH}") {
                     sh 'pwd'
                     sh 'ls ../'
-                    sh 'ls ../resources'
+                    sh 'ls ../resources/'
                     sh 'cp ../resources/db-application.json ./app/db-application.json'
                     sh 'ls ./app'
                     sh "docker build --no-cache -t eello/dodo-fastapi:latest ."
