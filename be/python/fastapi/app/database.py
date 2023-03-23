@@ -14,10 +14,10 @@ class conn:
         secrets = json.loads(open(SECRET_FILE).read())
         DB = secrets["DB"]
 
-        DB_URL = f"mysql+pymysql://{DB['user']}:{DB['password']}@{DB['host']}:{DB['port']}/{DB['database']}?charset=utf8"
+        DB_URL = f"mysql+pymysql://{DB['user']}:{DB['password']}@{DB['host']}:{DB['port']}/{DB['database']}?charset=utf8mb4"
 
         # 커넥션 풀 생성
-        self.engine = create_engine(DB_URL, encoding = 'utf-8')
+        self.engine = create_engine(DB_URL, encoding = 'utf8mb4')
     
     def sessionMaker(self):
         SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
