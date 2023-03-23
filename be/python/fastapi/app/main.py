@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, Path, HTTPException
 from pydantic import BaseModel
-from app.database import conn
+from database import conn
 from models import Category
 
 app = FastAPI()
